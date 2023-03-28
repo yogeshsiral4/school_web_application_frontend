@@ -1,0 +1,35 @@
+<app-teachernavbar></app-teachernavbar>
+<br/>
+<h1 style="text-align: center;">Leaves send by Student</h1>
+<table class="table table-hover">
+    <tr>  
+        <th>Email</th> 
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>Leave Type</th> 
+    </tr>
+    <ng-container *ngFor="let item of datal">   
+        <tr>    
+            <td>{{item.email}}</td> 
+            <td>{{item.fromDate}}</td>
+            <td>{{item.toDate}}</td>
+            <td>{{item.leaveType}}</td>
+        </tr>  
+    </ng-container>  
+</table>
+<br/>
+<h1 style="text-align: center;">Messages send by Student</h1>
+<table class="table table-hover">
+    <tr>  
+        <th>Email</th> 
+        <th>Message</th>
+        
+    </tr>
+    <ng-container *ngFor="let item of datam">   
+        <tr>    
+            <td>{{item.email}}</td> 
+            <td>{{item.message}}</td>
+            
+        </tr>  
+    </ng-container>  
+</table>

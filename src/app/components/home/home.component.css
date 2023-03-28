@@ -1,0 +1,45 @@
+.toolbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #2cf5bc;
+    color: white;
+    font-weight: 600;
+  }
+  .toolbar img {
+    margin: 0 16px;
+  }
+  .toolbar span{
+    color: rgb(2, 80, 53);
+  }
+.text-center{
+    text-align: center;
+}
+.mt{
+    margin-top: 20px;
+}
+.textp{
+  padding-left: 280px;
+  margin-top: 5px;
+}
+.texti{
+  padding-left: 300px;
+  margin-top: 20px;
+}
+
+.ht{
+  padding-left: 240px;
+ 
+}
+table, th, td, tr{
+  border: 2px solid black;
+  border-collapse: collapse;
+  height: 45px;
+  column-width: 500px;
+  text-align: center;
+  /* background-color: rgb(243, 219, 244); */
+}
+

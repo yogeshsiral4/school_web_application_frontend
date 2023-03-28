@@ -1,0 +1,18 @@
+<app-studentnavbar></app-studentnavbar>
+<br/>
+<h1 style="text-align: center;">Teacher Details</h1>
+  
+    <table  >   
+        <tr>  
+            <th>Name</th>
+            <th>Email</th> 
+            <th>Subject</th> 
+        </tr>
+        <ng-container *ngFor="let item of data">   
+            <tr>  
+                <td>{{item.firstName}} {{item.lastName}}</td>   
+                <td>{{item.email}}</td> 
+                <td>{{item.subject}}</td>
+            </tr>  
+        </ng-container>  
+    </table>  

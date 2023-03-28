@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../assets/loginimage.svg" height="100%" width="100%">
+        </div>
+        <div class="col-md-4 mt-3 mb-2">
+            <form action="" class="mt-5 p-5">
+                <h1 style="color: rgb(131, 146, 0);">Login</h1>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email" [(ngModel)]="email" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password" required>
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <select class="form-select" id="floatingSelect" aria-label="Role" name="role" [(ngModel)]="role" required>
+                      <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+                    </select>
+                    <label for="floatingSelect">Role</label>
+                  </div>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="reset" class="btn btn-outline-secondary me-md-2">Reset</button>
+                    <button class="btn btn-outline-success me-md-2" type="button" (click)="login()">Login</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>

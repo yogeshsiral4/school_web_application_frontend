@@ -1,0 +1,24 @@
+<app-studentnavbar></app-studentnavbar>
+<br/>
+<h1 style="align-items: center;">Pay Fees</h1>
+<br/>
+<form class="row g-3 p-5 mb-3" style="background-color: rgb(130, 167, 154); margin-left: 30px; margin-right: 30px;">
+    <div class="col-md-5">
+      <label  class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="email">
+    </div>
+    <div class="col-5">
+        <button type="submit" class="btn btn-primary" (click)="setEmailId()">Email Id</button>
+      </div>
+    <div class="col-md-5">
+        <label  class="form-label">UPI Id</label>
+        <input type="text" class="form-control" name="text" [(ngModel)]="upiId">
+    </div>
+    <div class="col-md-5">
+        <label  class="form-label">UPI Pin</label>
+        <input type="text" class="form-control" name="text" [(ngModel)]="upiPin">
+    </div>
+    <div class="col-10">
+      <button type="submit" class="btn btn-primary" (click)="payfees()">Pay Fees</button>
+    </div>
+  </form>

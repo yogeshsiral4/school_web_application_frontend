@@ -1,0 +1,55 @@
+<div>
+    <div class="toolbar">
+        <img
+        width="70"
+        alt="School Logo"
+        src="../assets/scl_logo.jpg"
+        />
+        <span style="font-size: 25px">Welcome to School Web Application</span>
+    </div>
+    <img 
+        style="width:100%;height: 80%; z-index:-1;position:  absolute;" 
+        src="assets/school.jpg" />
+    <div class="container">
+        <div class="texti">
+            <img 
+                style="width:100px;" 
+                src="assets/faculty.jpg"
+            />
+        </div>
+        <div class="textp">
+           
+        </div>   
+    </div>
+    
+    <div class="row">  
+        <div style="padding-left: 220px;" class="col-lg">  
+            <table>   
+                <tr style="background-color: black ; color: white;">  
+                    <th>Name</th>
+                    <th>Email</th> 
+                    <th>Subject</th> 
+                </tr>
+                <ng-container *ngFor="let item of data">   
+                    <tr style="background-color: rgb(243, 219, 244);">  
+                        <td>{{item.firstName}} {{item.lastName}}</td>   
+                        <td>{{item.email}}</td> 
+                        <td>{{item.subject}}</td>
+                    </tr>  
+                </ng-container>  
+            </table>  
+        </div>
+        <div class="col-md ht">
+            <div style="margin-top: 30px;">
+                <img
+                    width="30%"
+                    alt="Login Logo"
+                    src="../assets/logindemo.png"
+                    />
+            </div>  
+            <div style="margin-top: 35px;">
+                <a routerLink="/login" mat-raised-button color="accent">Login here</a>     
+            </div>
+        </div>
+    </div>
+</div>

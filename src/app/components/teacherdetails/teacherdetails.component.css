@@ -1,0 +1,11 @@
+table, th, td, tr{
+    border: 2px solid black;
+    border-collapse: collapse;
+    height: 45px;
+    column-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    background-color: rgb(253, 237, 253);
+  }
+  

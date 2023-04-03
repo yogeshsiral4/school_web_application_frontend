@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminroleGuard } from './adminrole.guard';
+import { AuthGuard } from './auth.guard';
 import { AdminComponent } from './components/admin/admin.component';
 import { DropmessageComponent } from './components/dropmessage/dropmessage.component';
 import { FeesComponent } from './components/fees/fees.component';
@@ -14,12 +16,14 @@ import { StudentnavbarComponent } from './components/studentnavbar/studentnavbar
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { TeacherdetailsComponent } from './components/teacherdetails/teacherdetails.component';
 import { UpdateComponent } from './components/update/update.component';
+import { StudentroleGuard } from './studentrole.guard';
+import { TeacherroleGuard } from './teacherrole.guard';
 
 const routes: Routes = [
   {
     path : 'login',
     component : LoginComponent,
-    pathMatch : 'full'
+    
   },
   {
     path : '',
@@ -29,57 +33,57 @@ const routes: Routes = [
   {
     path : 'student',
     component : StudentComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,StudentroleGuard]
   },
   {
     path : 'admin',
     component : AdminComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,AdminroleGuard]
   },
   {
     path : 'teacher',
     component : TeacherComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,TeacherroleGuard]
   },
   {
     path : 'admin/registration',
     component : RegistrationComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,AdminroleGuard]
   },
   {
     path : 'navbar',
     component : NavbarComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,AdminroleGuard]
   },
   {
     path :'admin/update',
     component : UpdateComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,AdminroleGuard]
   },
   {
     path :'studentnavbar',
     component : StudentnavbarComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,StudentroleGuard],
   },
   {
     path :'student/leave',
     component : LeaveComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,StudentroleGuard]
   },
   {
     path :'student/dropmessage',
     component : DropmessageComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,StudentroleGuard]
   },
   {
     path :'student/teacherdetails',
     component : TeacherdetailsComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,StudentroleGuard]
   },
   {
     path :'student/payfees',
     component : FeesComponent,
-    pathMatch : 'full'
+    canActivate:[AuthGuard,StudentroleGuard]
   }
 ];
 

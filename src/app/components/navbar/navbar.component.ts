@@ -16,6 +16,7 @@ export class NavbarComponent {
  }
  logout(){
     this.cookie.delete("Token");
+    this.cookie.delete("Role");
     this.route.navigate(['/login']);
  }
 

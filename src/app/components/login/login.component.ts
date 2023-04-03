@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { User } from 'src/app/classes/user';
 import { LoginService } from 'src/app/login.service';
 
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   roles : string[];
 
-  constructor(private loginService : LoginService, private route : Router ) { 
+  constructor(private loginService : LoginService, private route : Router,private cookie:CookieService ) { 
     this.roles = [
       '',
       'Admin',
@@ -47,15 +48,15 @@ export class LoginComponent implements OnInit {
         alert("Login Successful !!!");
       
 
-        if(this.role == 'Student') {
+        if(this.cookie.get('Role') === 'Student') {
           this.route.navigate(['/student']);
         } 
 
-        if( this.role == 'Admin') {
+        if( this.cookie.get('Role') == 'Admin') {
           this.route.navigate(['/admin']);
         }
 
-        if( this.role == 'Teacher') {
+        if( this.cookie.get('Role') == 'Teacher') {
           this.route.navigate(['/teacher']);
         }
 

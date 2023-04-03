@@ -11,6 +11,7 @@ export class TeachernavbarComponent {
   constructor(private cookie : CookieService,private route : Router){}
   logout(){
     this.cookie.delete("Token");
+    this.cookie.delete("Role");
     this.route.navigate(['/login']);
   }
 }

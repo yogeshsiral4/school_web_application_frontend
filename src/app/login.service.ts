@@ -17,7 +17,7 @@ export class LoginService {
 
   login(user : User) : Observable<any> {
     let resp = this.http.post<any>("http://localhost:9192/home/login",user,{responseType:'text' as 'json'});
-    resp.subscribe(data =>this.cookie.set('Token',data));
+    resp.subscribe(data =>{this.cookie.set('Token',data);this.cookie.set('Role',user.role)});
     return this.http.post<any>("http://localhost:9192/home/login",user,{responseType:'text' as 'json'});
   }
 }
